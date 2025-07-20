@@ -4,25 +4,25 @@ import bcrypt from "bcryptjs"
 const usuarioSchema = new mongoose.Schema({
   nombreUsr: {
     type: String,
-    required: [true, "El nombre es obligatorio"],
+    required: [true],
     trim: true,
     maxlength: [50, "El nombre no puede exceder 50 caracteres"],
   },
   apellidoUsr: {
     type: String,
-    required: [true, "El apellido es obligatorio"],
+    required: [true],
     trim: true,
     maxlength: [50, "El apellido no puede exceder 50 caracteres"],
   },
   celUsr: {
     type: String,
-    required: [true, "El celular es obligatorio"],
+    required: [true],
     trim: true,
     match: [/^[0-9]{8}$/, "El celular debe tener 8 dígitos"],
   },
   emailUsr: {
     type: String,
-    required: [true, "El email es obligatorio"],
+    required: [true],
     unique: true,
     lowercase: true,
     trim: true,
@@ -30,7 +30,7 @@ const usuarioSchema = new mongoose.Schema({
   },
   contraseña: {
     type: String,
-    required: [true, "La contraseña es obligatoria"],
+    required: [true],
     minlength: [6, "La contraseña debe tener al menos 6 caracteres"],
     select: false,
   },

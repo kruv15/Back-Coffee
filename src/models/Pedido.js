@@ -4,7 +4,7 @@ const pedidoSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Usuario",
-    required: [true, "El ID del usuario es obligatorio"],
+    required: [true],
   },
   productos: [
     {
@@ -16,19 +16,19 @@ const pedidoSchema = new mongoose.Schema({
       cantidad: {
         type: Number,
         required: true,
-        min: [1, "La cantidad debe ser al menos 1"],
+        min: [1],
       },
       precio: {
         type: Number,
         required: true,
-        min: [0, "El precio no puede ser negativo"],
+        min: [0],
       },
     },
   ],
   total: {
     type: Number,
-    required: [true, "El total es obligatorio"],
-    min: [0, "El total no puede ser negativo"],
+    required: [true],
+    min: [0],
   },
   status: {
     type: String,
