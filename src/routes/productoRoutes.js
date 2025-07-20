@@ -15,7 +15,7 @@ const validacionProducto = [
   body("precioProd").isFloat({ min: 0 }).withMessage("El precio debe ser un número positivo"),
   body("stock").isInt({ min: 0 }).withMessage("El stock debe ser un número entero positivo"),
   body("categoria")
-    .isIn(["cafe-grano", "cafe-molido", "bebidas-frias", "postres", "accesorios"])
+    .isIn([])
     .withMessage("Categoría inválida"),
   body("imagen").trim().isURL().withMessage("La imagen debe ser una URL válida"),
 ]
