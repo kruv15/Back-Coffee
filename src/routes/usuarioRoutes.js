@@ -12,7 +12,10 @@ const validacionRegistro = [
     .trim()
     .isLength({ min: 2, max: 50 })
     .withMessage("El apellido debe tener entre 2 y 50 caracteres"),
-  body("celUsr").isMobilePhone("es-BO").withMessage("Número de celular inválido"),
+  body("celUsr")
+  .trim()
+  .isLength({ min: 8, max: 8 }).withMessage("El número debe tener exactamente 8 dígitos")
+  .matches(/^[67][0-9]{7}$/).withMessage("Debe comenzar con 6 o 7"),
   body("emailUsr").isEmail().normalizeEmail().withMessage("Email inválido"),
   body("contraseña").isLength({ min: 6 }).withMessage("La contraseña debe tener al menos 6 caracteres"),
 ]
