@@ -15,7 +15,7 @@ export const pedidoController = {
         })
       }
 
-      const { productos } = req.body
+      const { productos, direccionEntrega, infoAdicional  } = req.body
       let total = 0
       const productosValidados = []
 
@@ -56,6 +56,8 @@ export const pedidoController = {
         userId: req.usuario._id,
         productos: productosValidados,
         total,
+        direccionEntrega,
+        infoAdicional,
       })
 
       await nuevoPedido.save()
