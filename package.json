@@ -9,7 +9,7 @@
     "dev": "nodemon index.js"
   },
   "keywords": ["nodejs", "mongodb", "express", "tienda", "cafe"],
-  "author": "Tu Nombre",
+  "author": "Coffee",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",

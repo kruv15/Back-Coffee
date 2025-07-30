@@ -39,6 +39,16 @@ const pedidoSchema = new mongoose.Schema({
     },
     default: "pendiente",
   },
+  direccionEntrega: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  infoAdicional: {
+    type: String,
+    default: "",
+    trim: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
