@@ -15,7 +15,7 @@ export const pedidoController = {
         })
       }
 
-      const { productos, direccionEntrega } = req.body
+      const { productos, direccionEntrega, infoAdicional  } = req.body
       let total = 0
       const productosValidados = []
 
