@@ -10,6 +10,8 @@ const validacionPedido = [
   body("productos").isArray({ min: 1 }).withMessage("Debe incluir al menos un producto"),
   body("productos.*.productoId").isMongoId().withMessage("ID de producto inválido"),
   body("productos.*.cantidad").isInt({ min: 1 }).withMessage("La cantidad debe ser un número entero positivo"),
+  body("direccionEntrega").trim(),
+  body("infoAdicional").trim(),
 ]
 
 const validacionEstado = [
